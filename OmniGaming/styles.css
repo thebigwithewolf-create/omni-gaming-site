@@ -1,0 +1,315 @@
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Tipografía base */
+body{
+  font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;
+  background:#0a0a0a;
+  color:#eee;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  
+}
+
+/* Topbar */
+.topbar{
+  background:#0a0a0a;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 18px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom:1px solid rgba(255,255,255,.03);
+}
+
+.brand{display:flex;align-items:center;gap:12px;}
+.brand img.logo{
+  width:46px;height:46px;object-fit:contain;
+  border-radius:8px;
+  background:linear-gradient(135deg,#111,#222);
+  padding:6px;
+}
+.brand .title{font-weight:600;letter-spacing:.6px;font-size:18px;}
+
+.brand {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.brand:hover {
+  opacity: .9;
+}
+
+
+/* Nav */
+nav.menu{display:flex;
+    gap:18px;
+    align-items:center;}
+nav.menu a{
+  color:#ddd;
+  text-decoration:none;
+  font-weight:400;
+  padding:8px 10px;
+  border-radius:6px;
+  transition:background .18s,color .18s,transform .12s;
+}
+nav.menu a:hover{
+  background:rgba(255,255,255,.03);
+  color:#fff;transform:translateY(-1px);
+  
+}
+
+/* Hero */
+.hero{
+  min-height:66vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  position:relative;
+  padding:36px 18px;
+  background-image:url('images/fondo.jpg');
+  background-size:cover;
+  background-position:center;
+}
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(5,5,5,.45),rgba(0,0,0,.65));
+  z-index:0;
+}
+.hero .container{position:relative;z-index:1;max-width:1100px;}
+
+.hero h1{
+  font-size:clamp(26px,4.6vw,48px);
+  margin-bottom:12px;color:#fff;letter-spacing:1px;
+}
+.hero p.lead{
+  font-size:clamp(14px,2.2vw,18px);
+  color:#dfe7f3;opacity:.9;margin-bottom:18px;
+}
+.hero .cta{
+  display:inline-block;padding:14px 28px;border-radius:14px;
+  background:linear-gradient(90deg,#00ccff,#0c4f9b);
+  color:#fff;font-weight:600;text-decoration:none;
+  box-shadow:0 10px 32px rgba(255,61,143,.12);
+}
+.hero .cta:hover{transform:scale(1.08);}
+
+.hero .discord-btn{
+  background:linear-gradient(90deg,#5865F2,#7289DA);
+  box-shadow:0 6px 22px rgba(88,101,242,.35);
+}
+.hero .discord-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 8px 26px rgba(88,101,242,.5);
+}
+
+/* Main & cards */
+.main{max-width:1100px;margin:28px auto;padding:0 18px 60px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.03);
+  padding:18px;border-radius:12px;text-align:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.45);
+}
+.card img{
+    width:100%;
+    margin-top:10px;
+    border-radius:14px;
+    object-fit:contain;
+    opacity:.95;
+}
+
+/* NOSOTROS desplegable */
+#nosotros.about-box{
+  overflow:hidden;
+  max-height:54px;
+  transition:max-height .5s ease,padding .3s ease;
+  cursor:pointer;
+  padding:10px 16px;
+  display:block;
+}
+#nosotros.about-box:hover{
+  max-height:680px;
+  padding:24px 22px;
+}
+#nosotros.about-box h2{text-align:center;margin:0 0 14px;}
+#nosotros.about-box p{
+    margin-top:6px;
+    font-weight: 400;}
+
+/* Gallery */
+.gallery{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
+.gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;}
+
+/* Footer */
+footer{
+  background:#070707;color:#bfc8d9;
+  padding:18px;text-align:center;
+  border-top:1px solid rgba(255,255,255,.02);
+  margin-top:40px;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+  header{padding:10px 14px;}
+
+  nav.menu{gap:12px;}
+  nav.menu a{font-size:14px;padding:6px 8px;}
+
+  .hero{min-height:70vh;padding:28px 16px;}
+  .hero h1{font-size:1.7rem;line-height:1.25;}
+  .hero p.lead{font-size:.95rem;}
+  .hero .cta{padding:12px 22px;font-size:.95rem;}
+
+  #nosotros{margin-top:32px;padding-top:24px;}
+}
+
+/* Transition overlay */
+#page-transition{
+  position:fixed;inset:0;
+  background:radial-gradient(circle at center,#0b0b0b,#000);
+  z-index:9999;opacity:0;pointer-events:none;
+  transform:scale(1.05);
+  transition:opacity .4s ease,transform .4s ease;
+}
+#page-transition.active{opacity:1;transform:scale(1);}
+
+#nosotros h2{margin-bottom:20px;}
+#nosotros p{margin-bottom:16px;line-height:1.6;}
+
+/* Sección Nosotros */
+#nosotros {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+/* Título de Novedades */
+#galeria h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Contenedor Novedades */
+#galeria {
+  margin-top: 22px;
+}
+
+/* Imágenes dentro de novedades */
+#galeria .card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Texto pequeño del footer */
+footer p:last-child {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+/* Modifica esta parte en tu CSS */
+#nosotros.about-box p {
+  font-size: 10px; /* Texto más pequeño */
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  color: #c6c5c5; /* Un gris suave para que no canse la vista */
+  
+  text-align: center; 
+}
+
+/* Asegura que el título H2 dentro de Nosotros SIEMPRE esté en negrita */
+#nosotros h2 {
+    font-weight: 700;
+}
+
+/* Tamaño de fuente y peso para todas las descripciones de las tarjetas */
+.card p {
+  font-size: 14px; /* Cambia a 14px (puedes usar 13px o 12px si quieres que sean aún más pequeñas) */
+  font-weight: 300; /* Asegura que no estén en negrita */
+  color: #c6c5c5; /* Un gris suave para que no canse la vista */
+  line-height: 1.5; /* Mejora la legibilidad */
+}
+
+/* Tamaño de fuente y peso para el texto de la sección Nosotros */
+#nosotros.about-box p {
+  font-size: 15px; /* Un poco más grande que las tarjetas para facilitar la lectura, ajústalo si quieres */
+  font-weight: 400;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/* Añade esto para separar los títulos del contenido */
+.card h3 {
+  margin-bottom: 15px; /* Espacio entre el título y el párrafo */
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Espaciado general entre las secciones de tarjetas */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px; /* Aumenté el espacio entre tarjetas de 16px a 25px */
+  margin-top: 20px;
+}
+
+/* Añade este margen superior para separar la caja de Novedades del contenido de arriba */
+#novedades {
+  margin-top: 20px; /* Puedes ajustar este valor (30px, 60px) según cuánto espacio quieras */
+  margin-bottom: 20px; /* Opcional: añade un poco de espacio también por debajo */
+}
+
+/* Y si usas esta clase específica: */
+.about-box-simple {
+   margin-top: 50px; 
+}
+
+#nosotros {
+  scroll-margin-top: 90px; /* ajusta según el alto de tu barra */
+}
+
+#novedades {
+  scroll-margin-top: 90px;   /* igual que en #nosotros */
+
+
+}
+
+.availability {
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 10px 14px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.hand-hint{
+  
+  position: absolute; 
+  display: inline-block;
+  margin-left: -55px;
+  font-size: 30px;
+  animation: wiggle 1s infinite ease-in-out;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,.4));
+}
+
+/* Animación */
+@keyframes wiggle {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  40% { transform: translateX(6px) rotate(6deg); }
+  70% { transform: translateX(3px) rotate(-4deg); }
+}
+

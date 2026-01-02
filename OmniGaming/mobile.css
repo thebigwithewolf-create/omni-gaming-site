@@ -1,0 +1,110 @@
+/* ===========================
+   OMNI GAMING — ESTILOS MÓVIL
+   Solo se aplica en pantallas pequeñas
+   =========================== */
+
+/* Header más compacto */
+header {
+  padding: 10px 14px;
+}
+
+/* Menú superior */
+nav.menu {
+  gap: 12px;
+}
+
+nav.menu a {
+  font-size: 14px;
+  padding: 6px 8px;
+}
+
+/* Hero / portada */
+.hero {
+  min-height: 70vh;
+  padding: 28px 16px;
+  text-align: center;
+}
+
+/* Título principal */
+.hero h1 {
+  font-size: 1.7rem;
+  line-height: 1.25;
+}
+
+/* Texto debajo del título */
+.hero p.lead {
+  font-size: 0.95rem;
+}
+
+/* Botón principal */
+.hero .cta,
+.hero .btn,
+.hero button {
+  padding: 10px 22px;
+  font-size: 0.95rem;
+}
+
+/* Tarjetas / secciones */
+.card {
+  padding: 18px 14px;
+}
+
+/* “Nosotros” con espacio real arriba */
+#nosotros {
+  margin-top: 32px;
+  padding-top: 24px;
+}
+
+/* Galería: 2 columnas en móvil */
+.gallery {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Footer más legible */
+footer {
+  text-align: center;
+  padding: 18px 10px;
+}
+
+@media (max-width: 768px) {
+
+  .about-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 65vh;
+  }
+
+  .about-scroll {
+    overflow-y: auto;
+    max-height: 55vh;
+    padding-right: 10px;
+  }
+
+  .about-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .about-controls button {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #2b7cff;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.availability {
+  font-size: 18px;
+}
+
+.hand-hint{
+  font-size: 22px;
+  
+}
+
+

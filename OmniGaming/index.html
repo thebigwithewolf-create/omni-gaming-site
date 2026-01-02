@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+  <link rel="stylesheet" href="styles.css">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Omni Gaming</title>
+</head>
+
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <header class="topbar" role="banner">
+    <a href="#inicio" class="brand">
+      <img class="logo" src="images/logo.png" alt="Logo Omni Gaming">
+      <div>
+        <div class="title">Omni Gaming</div>
+        <div style="font-size:12px; opacity:0.6;">Servidor Oficial</div>
+      </div>
+    </a>
+
+    <nav class="menu" role="navigation" aria-label="Menú principal">
+
+      <a href="#nosotros">Nosotros</a>
+      <a href="#novedades">Novedades</a>
+    </nav>
+  </header>
+
+  <!-- HERO / PORTADA -->
+  <section class="hero" id="inicio" role="region" aria-label="Portada Omni Gaming">
+    <div class="container">
+      <h1>Bienvenido a <strong>Omni Gaming</strong></h1>
+      <p class="lead">
+        👑 Únete a nuestra comunidad. Eventos, Roleplay, minijuegos y mucho más. ¡Conecta y forma parte de la leyenda! 👑
+      </p>
+    <div class="cta-wrapper">
+      <span class="hand-hint">👉</span>
+
+      <a class="cta discord-btn" href="https://discord.gg/xB3pXUX9Eg" target="_blank">
+        ¡Únete!
+      </a>
+      
+    </div>  
+
+      <p class="availability">
+       📲 Disponible en <strong>Android</strong> y <strong>PC</strong>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main" role="main">
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="card about-box">
+      <h2>Nosotros</h2>
+
+      <div class="about-panel">
+
+        <div class="about-scroll" id="aboutScroll">
+
+          <p>
+            Omni Gaming es un servidor de rol monárquico donde la sociedad se organiza bajo una estructura inspirada en la vida real.
+            El poder del Estado reside en la figura del Emperador Edwin II de Ghelys, máxima autoridad del Imperio y eje central del orden político y social del servidor.
+            En este mundo, cada jugador tiene la oportunidad de forjar su propio destino. No solo se trata de trabajar, ganar dinero o sobrevivir, sino de participar activamente en la construcción del Imperio. Los ciudadanos pueden involucrarse en la política, formar parte de instituciones, postular a cargos, influir en decisiones de Estado o incluso convertirse en figuras clave dentro del sistema de poder.
+          </p>
+
+          <p>
+            La política, la economía, la justicia y las relaciones sociales se desarrollan mediante rol constante y coherente, donde las acciones tienen consecuencias.
+            Las leyes se debaten, el poder se gana o se pierde, y la historia del servidor se escribe con cada decisión tomada por la comunidad.
+            Omni Gaming busca ofrecer una experiencia de rol profunda, estructurada y realista, donde el respeto por el rol, la narrativa y la evolución del Imperio sean la base de todo.
+            Aquí no eres un jugador más: eres un ciudadano dentro de un sistema vivo, con voz, influencia y ambición.
+          </p>
+
+        </div>
+
+        <!-- Botones solo para móvil -->
+        <div class="about-controls">
+          <button onclick="scrollNosotros(-140)">▲</button>
+          <button onclick="scrollNosotros(140)">▼</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BLOQUES: VIP / STAFF / INFO -->
+    <div class="cards">
+      <article class="card" id="vip">
+        <h3>Acceso VIP</h3>
+        <p>
+          Beneficios exclusivos: ropa, vehiculos, comandos especiales y prioridad en eventos.
+          Solicita tu membresía en nuestro Discord.
+        </p>
+        <img src="images/vip.jpg" alt="Acceso VIP">
+      </article>
+
+      <article class="card" id="staff">
+        <h3>Staff</h3>
+        <p>
+          Equipo activo 24/7: administradores, moderadores y staff técnico.
+          Nuestro staff vela por reglas claras y una comunidad sana.
+        </p>
+        <img src="images/staff.jpg" alt="Equipo Staff">
+      </article>
+
+      <article class="card" id="creadores">
+        <h3>Creadores</h3>
+        <p>
+          Si eres streamer o creador, este es tu lugar. Crece con nosotros y forma parte del proyecto.
+        </p>
+        <img src="images/creadores.jpg" alt="Creadores de contenido">
+      </article>
+    </div>
+
+    
+    <!-- NOVEDADES ESTILO CAJA -->
+      <section id="novedades" class="card about-box-simple">
+      <h2>Novedades</h2>
+      </section>
+
+      <div class="cards">
+
+        <article class="card">
+          <h3>Contrabando</h3>
+          <p>Nuevo trabajo disponible para transportar mercancía por toda la ciudad.</p>
+          <img src="images/contrabando.jpg" alt="Trabajo Contrabando">
+        </article>
+
+        <article class="card">
+          <h3>Basurero</h3>
+          <p>Trabajo esencial para mantener la ciudad limpia y ganar dinero constante.</p>
+          <img src="images/basurero.jpg" alt="Trabajo Basurero">
+        </article>
+
+        <article class="card">
+          <h3>Médico</h3>
+          <p>Ayuda a los jugadores heridos y forma parte del sistema de salud del servidor.</p>
+          <img src="images/medico.jpg" alt="Trabajo Médico">
+        </article>
+
+      </div>
+    
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© <strong>Omni Gaming</strong> • Comunidad de jugadores • Hecho con ❤️</p>
+
+    <p>
+      Todos los derechos reservados • Omni Gaming
+    </p>
+  </footer>
+
+  <!-- TRANSICIÓN DE PÁGINA -->
+  <div id="page-transition"></div>
+
+  <script>
+    document.querySelectorAll("a").forEach(link => {
+      const url = link.getAttribute("href");
+      if (!url || url.startsWith("#")) return;
+
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const transition = document.getElementById("page-transition");
+        transition.classList.add("active");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 350);
+      });
+    });
+  </script>
+
+  <script>
+    function scrollNosotros(amount) {
+      const box = document.getElementById("aboutScroll");
+      box.scrollBy({ top: amount, behavior: "smooth" });
+    }
+  </script>
+  
+</body>
+</html>
+
+
